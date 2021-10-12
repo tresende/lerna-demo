@@ -1,8 +1,27 @@
 {
   "name": "@tresende/root",
   "private": true,
+  "scripts": {
+    "dev": "start-storybook -p 5555",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js"
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@storybook/addon-docs": "^6.3.11",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.11",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.13.2",
+    "lerna": "^4.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.1",
+    "webpack": "^5.58.1"
   },
   "workspaces": [
     "packages/*"
